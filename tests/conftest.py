@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from selene import Browser, Config, browser
+from selene import browser
 from selenium.webdriver.chrome.options import Options
 
 from utils import attach
@@ -24,7 +24,7 @@ def settings_browser():
     )
 
     browser.config.driver = driver
-    browser.config.base_url = 'https://demoqa.com/'
+    browser.config.base_url = 'https://demoqa.com'
     browser.config.window_height = 1080
     browser.config.window_width = 1920
 
@@ -33,5 +33,6 @@ def settings_browser():
     attach.add_html(browser)
     attach.add_screenshot(browser)
     attach.add_logs(browser)
+    attach.add_video(browser)
 
     browser.quit()

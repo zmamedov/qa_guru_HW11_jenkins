@@ -6,7 +6,7 @@ from qa_guru_HW11_jenkins.resource import path
 
 def test_filling_form():
     with allure.step("Открыть страницу регистрации"):
-        browser.open('automation-practice-form')
+        browser.open('/automation-practice-form')
 
     with allure.step("Заполнить форму и отправить"):
         browser.element('#firstName').type('Gercog')
