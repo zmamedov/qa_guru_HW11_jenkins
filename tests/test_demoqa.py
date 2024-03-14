@@ -1,5 +1,7 @@
-import os, allure
+import allure
 from selene import browser, have
+
+from qa_guru_HW11_jenkins.resource import path
 
 
 def test_filling_form():
@@ -21,7 +23,7 @@ def test_filling_form():
         browser.element('#subjectsInput').type('M')
         browser.element('#react-select-2-option-1').click()
         browser.element('[for="hobbies-checkbox-2"]').click()
-        browser.element('#uploadPicture').send_keys(os.path.abspath('Chester-Mills.jpeg'))
+        browser.element('#uploadPicture').send_keys(path('Chester-Mills.jpeg'))
         browser.element('#currentAddress').type('Chester-Mills, Center')
         browser.element('#react-select-3-input').type('Haryana').press_enter()
         browser.element('#react-select-4-input').type('Karnal').press_enter()
